@@ -1,3 +1,4 @@
+# Fyber Token class
 class FyberToken
   def self.generate(params)
     require 'digest/sha1'

@@ -2,16 +2,18 @@ require 'sinatra/base'
 require 'sinatra/json'
 require 'utils/string_util'
 
+# Fyber Offers App Base class
 class FyberOffersApp < Sinatra::Base
-
-  set :views, Proc.new { File.join(root, "../templates") }
+  set :views, proc { File.join(root, '../templates') }
 
   get '/' do
     erb :home
   end
 
   before '/offers' do
-    status 400 if params[:uid].blank? || params[:pub0].blank? || params[:page].blank?
+    if params[:uid].blank? || params[:pub0].blank? || params[:page].blank?
+      status 400
+    end
   end
 
   get '/offers' do
