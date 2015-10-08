@@ -5,7 +5,7 @@ describe 'Sinatra App' do
   include Rack::Test::Methods
 
   def app
-    FyberOffersApp.new
+    FyberOffersApp.new({})
   end
 
   it 'displays home page' do
