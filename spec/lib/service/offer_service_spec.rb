@@ -59,7 +59,7 @@ RSpec.describe OfferService do
       allow(RestClient).to receive(:get) { response }
 
       json = OfferService.fetch(param)
-      expect(json[:code]).to eq("OK")
+      expect(json[:code]).to eq('OK')
     end
 
     it 'returns a empty array as offers in success object' do
@@ -78,7 +78,7 @@ RSpec.describe OfferService do
 
     it 'returns a 400 code in failure object' do
       json = OfferService.fetch(param)
-      expect(json[:code]).to eq("400")
+      expect(json[:code]).to eq('400')
     end
 
     it 'returns a 400 status in failure object' do
