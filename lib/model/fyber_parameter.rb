@@ -1,7 +1,7 @@
 # Fyber Service Parameters class
 class FyberParameter
   attr_accessor :app_id, :device_id, :ip, :locale, :format,
-                :page, :ps_time, :pub0, :timestamp, :uid, :app_key
+                :page, :ps_time, :pub0, :timestamp, :uid, :api_key
   def initialize(params)
     self.pub0 = params[:pub0]
     self.page = params[:page]
@@ -14,6 +14,7 @@ class FyberParameter
     self.device_id = config['device_id']
     self.ip = config['ip']
     self.locale = config['locale']
+    self.api_key = config['api_key']
     self.ps_time = Time.now.to_i
     self.timestamp = Time.now.to_i
     self
