@@ -10,7 +10,7 @@ describe 'Sinatra App' do
 
   it 'displays home page' do
     get '/'
-    expect(last_response.body).to include('Foo')
+    expect(last_response.body).to include('Fyber Offers')
   end
 
   describe 'GET /offers' do

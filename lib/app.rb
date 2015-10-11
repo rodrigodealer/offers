@@ -26,8 +26,7 @@ class FyberOffersApp < Sinatra::Base
 
   get '/offers' do
     fyber_param = FyberParameter.new(params).config(settings.config)
-    ::OfferService.fetch(fyber_param)
-    obj = { foo: 'bar' }
-    json obj
+    response = ::OfferService.fetch(fyber_param)
+    json response
   end
 end

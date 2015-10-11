@@ -3,7 +3,7 @@ require 'model/fyber_token'
 
 RSpec.describe FyberToken do
   let(:param) do
-    param = FyberParameter.new
+    param = FyberParameter.new({})
     param.app_id = '157'
     param.device_id = '2b6f0cc904d137be2e1730235f5664094b831186'
     param.ip = '212.45.111.17'
