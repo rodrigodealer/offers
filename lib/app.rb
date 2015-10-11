@@ -9,6 +9,7 @@ require File.join(File.dirname(__FILE__), 'service/offer_service')
 # Fyber Offers App Base class
 class FyberOffersApp < Sinatra::Base
   set :views, proc { File.join(root, '../templates') }
+  set :public_folder, proc { File.join(root, '../public') }
 
   configure do
     set :config, YAML.load_file('config.yml')
