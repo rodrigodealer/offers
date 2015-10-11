@@ -17,9 +17,12 @@ var template = '{{#offers}} \
 var loadOffers = function () {
   $.ajax({
     url: "/offers?" + $("form").serialize()
-  }).done(function (data) {
-    var offers = {"offers": [{"title": "No offers available"}] };
-    if (data.code === "OK") offers = data;
-    $("#offers").html(Mustache.render(template, offers));
-  });
+  }).error(renderHtml)
+    .done(renderHtml);
+};
+
+var renderHtml = function (data) {
+  var offers = {"offers": [{"title": "No offers available"}] };
+  if (data.code === "OK") offers = data;
+  $("#offers").html(Mustache.render(template, offers));
 };
