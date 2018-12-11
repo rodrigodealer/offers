@@ -8,5 +8,5 @@ group :test, :development do
   gem 'rack-test'
   gem 'rspec', '3.3.0', require: 'spec'
   gem 'coco', '0.13.0'
-  gem 'rubocop', '0.34.2', require: false
+  gem 'rubocop', '>=0.49.0', require: false
 end
